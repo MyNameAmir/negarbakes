@@ -10,7 +10,8 @@
             font-family: 'Roboto', Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: lavender;
+            background-color: black; /* Set body background to black */
+            overflow: hidden; /* Hide scrollbars initially */
         }
 
         #initialText {
@@ -22,21 +23,22 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+            color: lavender; /* Set text color to lavender */
+            white-space: nowrap; /* Prevent text from wrapping */
         }
 
         .content-wrapper {
-            width: 90%;
-            margin: 0 auto;
-            background-color: #ffffff;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            overflow: hidden; /* Ensures the box shadow is visible even if content overflows */
+            width: 100vw; /* Full viewport width */
+            height: 100vh; /* Full viewport height */
+            background-color: lavender; /* Soft lavender color for wrapper */
         }
 
         .content {
             opacity: 0;
             transition: opacity 0.5s ease-in-out;
             padding: 20px;
+            overflow-y: auto; /* Enable vertical scrolling */
+            height: 100%; /* Set height to fill the wrapper */
         }
 
         header, nav, section, footer {
@@ -90,6 +92,7 @@
     </style>
 </head>
 <body>
+    <div id="initialText">Flower Flour Bakery</div>
     <div class="content-wrapper">
         <div class="content">
             <header>
@@ -138,7 +141,6 @@
             </footer>
         </div>
     </div>
-    <div id="initialText">Flower Flour Bakery</div>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             setTimeout(function() {
@@ -147,6 +149,7 @@
                 setTimeout(function() {
                     document.querySelector('#initialText').classList.add('hidden');
                     document.querySelector('.content').classList.remove('hidden');
+                    document.body.style.overflow = 'auto'; /* Enable scrolling */
                 }, 500);
             }, 500);
         });
