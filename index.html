@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bakery Mobile Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: lavender;
+            overflow: hidden;
+        }
+
+        #initialText {
+            font-size: 24px;
+            font-weight: bold;
+            opacity: 1;
+            transition: opacity 0.5s ease-out;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .content {
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            padding: 20px;
+        }
+
+        header, nav, section, footer {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        #menu ul {
+            padding: 0;
+            list-style-type: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #menu ul li {
+            margin: 20px 0;
+            width: 200px;
+            height: 200px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #menu ul li img {
+            display: block;
+            width: 100px;
+            height: 100px;
+            margin: 20px auto;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <header>
+            <h1>Welcome to Our Bakery</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+        <section id="about">
+            <h2>About Us</h2>
+            <p>We are a family-owned bakery dedicated to providing delicious pastries and baked goods using only the finest ingredients.</p>
+        </section>
+        <section id="menu">
+            <h2>Our Menu</h2>
+            <ul>
+                <li>
+                    <img src="cupcakes.jpg" alt="Cupcakes">
+                    <p>Cupcakes</p>
+                </li>
+                <li>
+                    <img src="muffins.jpg" alt="Muffins">
+                    <p>Muffins</p>
+                </li>
+                <li>
+                    <img src="cakes.jpg" alt="Cakes">
+                    <p>Cakes</p>
+                </li>
+                <li>
+                    <img src="cookies.jpg" alt="Cookies">
+                    <p>Cookies</p>
+                </li>
+            </ul>
+        </section>
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Phone: 123-456-7890</p>
+            <p>Email: info@bakery.com</p>
+            <p>Address: 123 Bakery St, City, Country</p>
+        </section>
+        <footer>
+            <p>&copy; 2024 Flower Flour Bakery. All rights reserved.</p>
+        </footer>
+    </div>
+    <div id="initialText">Flower Flour Bakery</div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(function() {
+                document.querySelector('#initialText').style.opacity = '0';
+                document.querySelector('.content').style.opacity = '1';
+                setTimeout(function() {
+                    document.querySelector('#initialText').classList.add('hidden');
+                    document.querySelector('.content').classList.remove('hidden');
+                }, 500);
+            }, 500);
+        });
+    </script>
+</body>
+</html>
