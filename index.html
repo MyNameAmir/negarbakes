@@ -24,6 +24,15 @@
             transform: translate(-50%, -50%);
         }
 
+        .content-wrapper {
+            width: 90%;
+            margin: 0 auto;
+            background-color: #ffffff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden; /* Ensures the box shadow is visible even if content overflows */
+        }
+
         .content {
             opacity: 0;
             transition: opacity 0.5s ease-in-out;
@@ -64,8 +73,8 @@
 
         #menu ul li {
             margin: 20px 0;
-            width: 200px;
-            height: 200px;
+            width: 90%; /* Adjusted to be 90% of the wrapper */
+            max-width: 300px; /* Limit the maximum width of list items */
             background-color: #ffffff;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -81,51 +90,53 @@
     </style>
 </head>
 <body>
-    <div class="content">
-        <header>
-            <h1>Welcome to Our Bakery</h1>
-        </header>
-        <nav>
-            <ul>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#contact">Contact Us</a></li>
-            </ul>
-        </nav>
-        <section id="about">
-            <h2>About Us</h2>
-            <p>We are a family-owned bakery dedicated to providing delicious pastries and baked goods using only the finest ingredients.</p>
-        </section>
-        <section id="menu">
-            <h2>Our Menu</h2>
-            <ul>
-                <li>
-                    <img src="cupcakes.jpg" alt="Cupcakes">
-                    <p>Cupcakes</p>
-                </li>
-                <li>
-                    <img src="muffins.jpg" alt="Muffins">
-                    <p>Muffins</p>
-                </li>
-                <li>
-                    <img src="cakes.jpg" alt="Cakes">
-                    <p>Cakes</p>
-                </li>
-                <li>
-                    <img src="cookies.jpg" alt="Cookies">
-                    <p>Cookies</p>
-                </li>
-            </ul>
-        </section>
-        <section id="contact">
-            <h2>Contact Us</h2>
-            <p>Phone: 123-456-7890</p>
-            <p>Email: info@bakery.com</p>
-            <p>Address: 123 Bakery St, City, Country</p>
-        </section>
-        <footer>
-            <p>&copy; 2024 Flower Flour Bakery. All rights reserved.</p>
-        </footer>
+    <div class="content-wrapper">
+        <div class="content">
+            <header>
+                <h1>Welcome to Our Bakery</h1>
+            </header>
+            <nav>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </nav>
+            <section id="about">
+                <h2>About Us</h2>
+                <p>We are a family-owned bakery dedicated to providing delicious pastries and baked goods using only the finest ingredients.</p>
+            </section>
+            <section id="menu">
+                <h2>Our Menu</h2>
+                <ul>
+                    <li>
+                        <img src="cupcakes.jpg" alt="Cupcakes">
+                        <p>Cupcakes</p>
+                    </li>
+                    <li>
+                        <img src="muffins.jpg" alt="Muffins">
+                        <p>Muffins</p>
+                    </li>
+                    <li>
+                        <img src="cakes.jpg" alt="Cakes">
+                        <p>Cakes</p>
+                    </li>
+                    <li>
+                        <img src="cookies.jpg" alt="Cookies">
+                        <p>Cookies</p>
+                    </li>
+                </ul>
+            </section>
+            <section id="contact">
+                <h2>Contact Us</h2>
+                <p>Phone: 123-456-7890</p>
+                <p>Email: info@bakery.com</p>
+                <p>Address: 123 Bakery St, City, Country</p>
+            </section>
+            <footer>
+                <p>&copy; 2024 Flower Flour Bakery. All rights reserved.</p>
+            </footer>
+        </div>
     </div>
     <div id="initialText">Flower Flour Bakery</div>
     <script>
