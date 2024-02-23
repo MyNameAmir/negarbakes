@@ -34,6 +34,12 @@
             padding: 20px; /* Add padding to the wrapper */
             border-radius: 10px; /* Add border-radius to the wrapper */
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Add box-shadow to the wrapper */
+            opacity: 0; /* Initially hide the wrapper */
+            transition: opacity 0.5s ease-out; /* Add transition effect for opacity */
+        }
+
+        .content-visible .content-wrapper {
+            opacity: 1; /* Make the wrapper visible */
         }
 
         .content {
@@ -121,42 +127,4 @@
                     </li>
                     <li>
                         <img src="muffins.jpg" alt="Muffins">
-                        <p>Muffins</p>
-                    </li>
-                    <li>
-                        <img src="cakes.jpg" alt="Cakes">
-                        <p>Cakes</p>
-                    </li>
-                    <li>
-                        <img src="cookies.jpg" alt="Cookies">
-                        <p>Cookies</p>
-                    </li>
-                </ul>
-            </section>
-            <section id="contact">
-                <h2>Contact Us</h2>
-                <p>Phone: 123-456-7890</p>
-                <p>Email: info@bakery.com</p>
-                <p>Address: 123 Bakery St, City, Country</p>
-            </section>
-            <footer>
-                <p>&copy; 2024 Flower Flour Bakery. All rights reserved.</p>
-            </footer>
-        </div>
-    </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            setTimeout(function() {
-                document.querySelector('body').style.backgroundColor = 'black'; /* Change body background to black */
-                document.querySelector('#initialText').style.opacity = '0';
-                document.querySelector('.content').style.opacity = '1';
-                setTimeout(function() {
-                    document.querySelector('#initialText').classList.add('hidden');
-                    document.querySelector('.content').classList.remove('hidden');
-                    document.body.style.overflow = 'auto'; /* Enable scrolling */
-                }, 500);
-            }, 500);
-        });
-    </script>
-</body>
-</html>
+                        <p
