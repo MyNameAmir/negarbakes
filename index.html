@@ -10,38 +10,36 @@
             font-family: 'Roboto', Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: black;
+            background-color: lavender;
             overflow: hidden;
+            color: black;
         }
 
         #initialText {
-            font-size: 24px;
-            font-weight: bold;
+            font-size: 36px; /* Larger font size */
+            font-weight: bold; /* Bolder font weight */
             opacity: 1;
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            color: black;
             white-space: nowrap;
+            transition: opacity 0.5s ease;
         }
 
         .content-wrapper {
             width: 80vw;
             margin: 0 auto;
-            background-color: lavender;
+            background-color: white;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
             opacity: 0;
+            transition: opacity 0.5s ease;
         }
 
         .content-visible .content-wrapper {
             opacity: 1;
-        }
-
-        .content {
-            opacity: 0;
         }
 
         header, nav, section, footer {
@@ -82,13 +80,14 @@
             background-color: #ffffff;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
         }
 
         #menu ul li img {
             display: block;
             width: 100px;
             height: 100px;
-            margin: 20px auto;
+            margin: 0 auto 20px; /* Adjust image margin */
             border-radius: 50%;
         }
     </style>
@@ -96,59 +95,56 @@
 <body>
     <div id="initialText">Flower Flour Bakery</div>
     <div class="content-wrapper">
-        <div class="content">
-            <header>
-                <h1>Welcome to Our Bakery</h1>
-            </header>
-            <nav>
-                <ul>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#menu">Menu</a></li>
-                    <li><a href="#contact">Contact Us</a></li>
-                </ul>
-            </nav>
-            <section id="about">
-                <h2>About Us</h2>
-                <p>We are a family-owned bakery dedicated to providing delicious pastries and baked goods using only the finest ingredients.</p>
-            </section>
-            <section id="menu">
-                <h2>Our Menu</h2>
-                <ul>
-                    <li>
-                        <img src="cupcakes.jpg" alt="Cupcakes">
-                        <p>Cupcakes</p>
-                    </li>
-                    <li>
-                        <img src="muffins.jpg" alt="Muffins">
-                        <p>Muffins</p>
-                    </li>
-                    <li>
-                        <img src="cakes.jpg" alt="Cakes">
-                        <p>Cakes</p>
-                    </li>
-                    <li>
-                        <img src="cookies.jpg" alt="Cookies">
-                        <p>Cookies</p>
-                    </li>
-                </ul>
-            </section>
-            <section id="contact">
-                <h2>Contact Us</h2>
-                <p>Phone: 123-456-7890</p>
-                <p>Email: info@bakery.com</p>
-                <p>Address: 123 Bakery St, City, Country</p>
-            </section>
-            <footer>
-                <p>&copy; 2024 Flower Flour Bakery. All rights reserved.</p>
-            </footer>
-        </div>
+        <header>
+            <h1>Welcome to Our Bakery</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+        <section id="about">
+            <h2>About Us</h2>
+            <p>We are a family-owned bakery dedicated to providing delicious pastries and baked goods using only the finest ingredients.</p>
+        </section>
+        <section id="menu">
+            <h2>Our Menu</h2>
+            <ul>
+                <li>
+                    <img src="cupcakes.jpg" alt="Cupcakes">
+                    <p>Cupcakes</p>
+                </li>
+                <li>
+                    <img src="muffins.jpg" alt="Muffins">
+                    <p>Muffins</p>
+                </li>
+                <li>
+                    <img src="cakes.jpg" alt="Cakes">
+                    <p>Cakes</p>
+                </li>
+                <li>
+                    <img src="cookies.jpg" alt="Cookies">
+                    <p>Cookies</p>
+                </li>
+            </ul>
+        </section>
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Phone: 123-456-7890</p>
+            <p>Email: info@bakery.com</p>
+            <p>Address: 123 Bakery St, City, Country</p>
+        </section>
+        <footer>
+            <p>&copy; 2024 Flower Flour Bakery. All rights reserved.</p>
+        </footer>
     </div>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             setTimeout(function() {
                 document.querySelector('#initialText').style.opacity = '0';
                 document.querySelector('.content-wrapper').style.opacity = '1';
-                document.querySelector('body').style.backgroundColor = 'black';
                 document.body.style.overflow = 'auto';
             }, 500);
         });
