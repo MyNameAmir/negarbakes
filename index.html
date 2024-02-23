@@ -36,7 +36,7 @@
             border-radius: 10px; /* Add border-radius to the wrapper */
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Add box-shadow to the wrapper */
             opacity: 0; /* Initially hide the wrapper */
-            transition: opacity 0.5s ease-out; /* Add transition effect for opacity */
+            transition: opacity 0.5s ease-out, background-color 0.5s ease; /* Add transition effect for opacity and background color */
         }
 
         .content-visible .content-wrapper {
@@ -155,15 +155,9 @@
         document.addEventListener('DOMContentLoaded', function() {
             setTimeout(function() {
                 document.querySelector('body').style.backgroundColor = 'black'; /* Change body background to black */
-                document.querySelector('.content-wrapper').style.backgroundColor = 'lavender'; /* Change wrapper background to lavender */
+                document.querySelector('.content-wrapper').style.opacity = '1'; /* Make the wrapper visible */
                 document.querySelector('#initialText').style.opacity = '0';
-                document.querySelector('.content').style.opacity = '1';
-                document.querySelector('.content-wrapper').classList.add('content-visible'); /* Make the wrapper visible */
-                setTimeout(function() {
-                    document.querySelector('#initialText').classList.add('hidden');
-                    document.querySelector('.content').classList.remove('hidden');
-                    document.body.style.overflow = 'auto'; /* Enable scrolling */
-                }, 500);
+                document.body.style.overflow = 'auto'; /* Enable scrolling */
             }, 500);
         });
     </script>
