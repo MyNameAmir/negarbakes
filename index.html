@@ -10,7 +10,7 @@
             font-family: 'Roboto', Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: lavender;
+            background-color: lavender; /* Set initial background color to lavender */
             overflow: hidden; /* Hide scrollbars initially */
         }
 
@@ -28,22 +28,25 @@
         }
 
         .content-wrapper {
-            width: 100vw; /* Full viewport width */
-            height: 100vh; /* Full viewport height */
-            background-color: lavender; /* Soft lavender color for wrapper */
+            width: 80vw; /* 80% of viewport width */
+            margin: 0 auto; /* Center the wrapper horizontally */
+            background-color: lavender; /* Lavender background color for wrapper */
+            padding: 20px; /* Add padding to the wrapper */
+            border-radius: 10px; /* Add border-radius to the wrapper */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Add box-shadow to the wrapper */
         }
 
         .content {
             opacity: 0;
             transition: opacity 0.5s ease-in-out;
-            padding: 20px;
-            overflow-y: auto; /* Enable vertical scrolling */
-            height: 100%; /* Set height to fill the wrapper */
         }
 
         header, nav, section, footer {
             text-align: center;
             padding: 20px;
+            border: 2px solid #ccc; /* Add border to each section */
+            border-radius: 5px; /* Add border-radius to each section */
+            margin-bottom: 20px; /* Add margin to each section */
         }
 
         .hidden {
