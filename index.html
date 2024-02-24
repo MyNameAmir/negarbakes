@@ -11,20 +11,7 @@
             margin: 0;
             padding: 0;
             background-color: lavender;
-            overflow: hidden;
             color: black;
-        }
-
-        #initialText {
-            font-size: 36px; /* Larger font size */
-            font-weight: bold; /* Bolder font weight */
-            opacity: 1;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            white-space: nowrap;
-            transition: opacity 0.5s ease;
         }
 
         .content-wrapper {
@@ -65,6 +52,16 @@
             color: #333;
         }
 
+        #menu {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
         #menu ul {
             padding: 0;
             list-style-type: none;
@@ -77,10 +74,6 @@
             margin: 20px 0;
             width: 90%;
             max-width: 300px;
-            background-color: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
         }
 
         #menu ul li img {
@@ -93,42 +86,44 @@
     </style>
 </head>
 <body>
-    <div id="initialText">Flower Flour Bakery</div>
+    <header>
+        <h1>Welcome to Our Bakery</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+    </nav>
+    <div id="menu">
+        <ul>
+            <li>
+                <img src="cupcakes.jpg" alt="Cupcakes">
+                <p>Cupcakes</p>
+            </li>
+            <li>
+                <img src="muffins.jpg" alt="Muffins">
+                <p>Muffins</p>
+            </li>
+            <li>
+                <img src="cakes.jpg" alt="Cakes">
+                <p>Cakes</p>
+            </li>
+            <li>
+                <img src="cookies.jpg" alt="Cookies">
+                <p>Cookies</p>
+            </li>
+        </ul>
+    </div>
     <div class="content-wrapper">
-        <header>
-            <h1>Welcome to Our Bakery</h1>
-        </header>
-        <nav>
-            <ul>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#contact">Contact Us</a></li>
-            </ul>
-        </nav>
         <section id="about">
             <h2>About Us</h2>
             <p>We are a family-owned bakery dedicated to providing delicious pastries and baked goods using only the finest ingredients.</p>
         </section>
-        <section id="menu">
+        <section id="menu-content">
             <h2>Our Menu</h2>
-            <ul>
-                <li>
-                    <img src="cupcakes.jpg" alt="Cupcakes">
-                    <p>Cupcakes</p>
-                </li>
-                <li>
-                    <img src="muffins.jpg" alt="Muffins">
-                    <p>Muffins</p>
-                </li>
-                <li>
-                    <img src="cakes.jpg" alt="Cakes">
-                    <p>Cakes</p>
-                </li>
-                <li>
-                    <img src="cookies.jpg" alt="Cookies">
-                    <p>Cookies</p>
-                </li>
-            </ul>
+            <!-- Add menu items here -->
         </section>
         <section id="contact">
             <h2>Contact Us</h2>
@@ -141,12 +136,15 @@
         </footer>
     </div>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            setTimeout(function() {
-                document.querySelector('#initialText').style.opacity = '0';
-                document.querySelector('.content-wrapper').style.opacity = '1';
-                document.body.style.overflow = 'auto';
-            }, 500);
+        window.addEventListener('scroll', function() {
+            var menu = document.getElementById('menu');
+            var menuContent = document.getElementById('menu-content');
+            var menuTop = menuContent.offsetTop - 50; // Adjust as needed
+            if (window.pageYOffset >= menuTop) {
+                menu.classList.add('sticky');
+            } else {
+                menu.classList.remove('sticky');
+            }
         });
     </script>
 </body>
