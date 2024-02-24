@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Negar Bakes</title>
+    <title>Bakery Mobile Website</title>
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -11,41 +12,65 @@
             font-family: 'Roboto', cursive;
             margin: 0;
             padding: 0;
-            background-color: lavender; /* Set initial background color to lavender */
-            color: black; /* Set initial text color to black */
             overflow: hidden;
-            transition: background-color 0.5s ease; /* Add transition for background color */
+            background-color: lavender;
+            /* Set initial background color to lavender */
+            color: black;
+            /* Set initial text color to black */
         }
 
         #initialText {
             font-family: 'Lobster';
-            font-size: 48px; /* Larger font size */
-            font-weight: bold; /* Bolder font weight */
+            font-size: 48px;
+            /* Larger font size */
+            font-weight: bold;
+            /* Bolder font weight */
             opacity: 1;
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             white-space: nowrap;
+            /* Prevent line breaks */
+            line-height: 1;
+            /* Set line height to normal */
             transition: opacity 0.5s ease;
         }
+
+        @media screen and (max-width: 431px) {
+            #initialText {
+                font-size: 36px;
+                line-height: 8vw;
+                /* Adjust line-height for smaller screens */
+            }
+
+            
+        }
+
+
+
+
 
         .content-wrapper {
             width: 80vw;
             margin: 0 auto;
-            background-color: lavender; /* Set wrapper background color */
+            background-color: lavender;
+            /* Set wrapper background color */
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
             opacity: 0;
-            transition: opacity 0.5s ease;
+            transition: opacity 1s ease;
         }
 
         .content-visible .content-wrapper {
             opacity: 1;
         }
 
-        header, nav, section, footer {
+        header,
+        nav,
+        section,
+        footer {
             text-align: center;
             padding: 20px;
             border: 2px solid #ccc;
@@ -54,18 +79,25 @@
         }
 
         nav {
-            background-color: lavender; /* Set navbar background color */
+            background-color: lavender;
+            /* Set navbar background color */
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             padding: 10px;
             position: sticky;
             top: 0;
             z-index: 1000;
-            color: black; /* Set navbar text color to black */
+            color: black;
+            /* Set navbar text color to black */
+            left: 0;
+            /* Add this to make the navbar take the full width */
+            
+            /* Add this to make the navbar take the full width */
         }
 
         nav ul {
-            list-style-type: none; /* Remove bullet points */
+            list-style-type: none;
+            /* Remove bullet points */
             padding: 0;
             margin: 0;
             text-align: center;
@@ -76,19 +108,21 @@
             margin-right: 20px;
         }
 
-        li{
+        li {
             list-style-type: none;
         }
 
         nav ul li a {
             text-decoration: none;
-            color: black; /* Set navbar link color to black */
+            color: black;
+            /* Set navbar link color to black */
         }
 
         .menu-content {
             display: none;
             opacity: 0;
-            transition: opacity 0.5s ease; /* Add opacity transition */
+            transition: opacity 0.5s ease;
+            /* Add opacity transition */
         }
 
         .menu-content-visible {
@@ -96,7 +130,8 @@
             opacity: 1;
         }
 
-        #seasonal-baked-goods, #year-round-baked-goods {
+        #seasonal-baked-goods,
+        #year-round-baked-goods {
             cursor: pointer;
             text-decoration: underline;
             color: blue;
@@ -104,16 +139,19 @@
 
         #menu ul {
             padding: 0;
-            list-style-type: none; /* Remove bullet points */
+            list-style-type: none;
+            /* Remove bullet points */
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
         #menu ul li {
-            list-style-type: none; /* Remove bullet points */
+            list-style-type: none;
+            /* Remove bullet points */
             margin: 20px 0;
-            width: 80%; /* Set width to 80% */
+            width: 80%;
+            /* Set width to 80% */
             background-color: #ffffff;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -122,7 +160,8 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            transition: transform 0.5s ease; /* Add transition for transform */
+            transition: transform 1s ease;
+            /* Add transition for transform */
         }
 
         #menu ul li img {
@@ -138,20 +177,32 @@
         }
     </style>
 </head>
+
 <body>
-    <div id="initialText">Flower Flour Bakery</div>
+    <div id="initialText">
+        <p>Flower</p><br>
+        <p>Flour</p><br>
+        <p>Bakery</p>
+    </div>
     <div class="content-wrapper">
         <header>
-            <h1>Flower Flour Baking</h1>
+            <h1>Welcome to Our Bakery</h1>
         </header>
         <nav>
             <ul>
                 <li><a href="#about">About Us</a></li>
-                <li><span id="seasonal-baked-goods">Seasonal Baked Goods</span></li>
-                <li><span id="year-round-baked-goods">Year-Round Baked Goods</span></li>
+                <li><a href="#bakedGoods">Baked Goods</a></li>
                 <li><a href="#contact">Contact Us</a></li>
             </ul>
         </nav>
+        <section id="bakedGoods">
+            <ul>
+                <li><span id="seasonal-baked-goods">Seasonal Baked Goods</span></li>
+                <li><span id="year-round-baked-goods">Year-Round Baked Goods</span></li>
+            </ul>
+            
+            
+        </section>
         <section id="seasonal-section" class="menu-content">
             <ul>
                 <li>
@@ -186,7 +237,8 @@
         </section>
         <section id="about">
             <h2>About Us</h2>
-            <p>We are a family-owned bakery dedicated to providing delicious pastries and baked goods using only the finest ingredients.</p>
+            <p>We are a family-owned bakery dedicated to providing delicious pastries and baked goods using only the
+                finest ingredients.</p>
         </section>
         <section id="contact">
             <h2>Contact Us</h2>
@@ -199,33 +251,55 @@
         </footer>
     </div>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            setTimeout(function() {
+        document.addEventListener('DOMContentLoaded', function () {
+            setTimeout(function () {
                 document.querySelector('#initialText').style.opacity = '0';
+                setTimeout(function () {
+                    document.querySelector('#initialText').style.display = 'none'; // Hide initial text after fading out
+                }, 1000); // Hide initial text after 1 second
                 document.querySelector('.content-wrapper').style.opacity = '1';
                 document.body.style.overflow = 'auto';
                 document.body.classList.add('roboto'); // Add 'roboto' class to body to change font to Roboto
             }, 500);
 
+            let currentMenu = null;
+
             function toggleMenu(menuId) {
                 const menu = document.getElementById(menuId);
-                if (menu.classList.contains('menu-content-visible')) {
+                if (menuId === currentMenu) {
+                    // Hide menu if the same button is clicked again
                     menu.classList.remove('menu-content-visible');
+                    setTimeout(function () {
+                        menu.style.display = 'none';
+                    }, 50); // Delay hiding the menu for smoother transition
+                    currentMenu = null;
                 } else {
-                    const menus = document.querySelectorAll('.menu-content');
-                    menus.forEach(menu => menu.classList.remove('menu-content-visible'));
-                    menu.classList.add('menu-content-visible');
+                    // Show menu
+                    if (currentMenu) {
+                        // Hide previously active menu
+                        const prevMenu = document.getElementById(currentMenu);
+                        prevMenu.classList.remove('menu-content-visible');
+                        setTimeout(function () {
+                            prevMenu.style.display = 'none';
+                        }, 50); // Delay hiding the menu for smoother transition
+                    }
+                    menu.style.display = 'block';
+                    setTimeout(function () {
+                        menu.classList.add('menu-content-visible');
+                    }, 50); // Delay showing the menu for smoother transition
+                    currentMenu = menuId;
                 }
             }
 
-            document.getElementById('seasonal-baked-goods').addEventListener('click', function() {
+            document.getElementById('seasonal-baked-goods').addEventListener('click', function () {
                 toggleMenu('seasonal-section');
             });
 
-            document.getElementById('year-round-baked-goods').addEventListener('click', function() {
+            document.getElementById('year-round-baked-goods').addEventListener('click', function () {
                 toggleMenu('year-round-section');
             });
         });
     </script>
 </body>
+
 </html>
