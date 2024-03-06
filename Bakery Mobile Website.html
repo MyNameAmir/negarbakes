@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
+<!-- saved from url=(0032)http://127.0.0.1:5500/index.html -->
+<html lang="en"><div id="in-page-channel-node-id" data-channel-name="in_page_channel_Ybr25H"></div><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bakery Mobile Website</title>
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="./Bakery Mobile Website_files/css2" rel="stylesheet">
+    <link href="./Bakery Mobile Website_files/css2(1)" rel="stylesheet">
     <style>
         body {
             font-family: 'Roboto', cursive;
@@ -77,8 +76,8 @@
         nav {
             background-color: lavender;
             /* Set navbar background color */
-            
-            border-bottom: 2px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             padding: 10px;
             position: sticky;
             top: 0;
@@ -90,10 +89,8 @@
             /* Add this to make the navbar take the full width */
         }
 
-        ul {
+        nav ul {
             list-style-type: none;
-            display: flex;
-            justify-content: space-around;
             /* Remove bullet points */
             padding: 0;
             margin: 0;
@@ -103,6 +100,7 @@
 
         nav ul li {
             display: inline;
+            margin-right: 20px;
         }
 
         li {
@@ -131,7 +129,7 @@
         #year-round-baked-goods {
             cursor: pointer;
             text-decoration: underline;
-            
+            color: blue;
         }
 
         #menu ul {
@@ -201,7 +199,7 @@
             left: 50%;
             transform: translate(-50%, -50%);
             z-index: 1;
-            color: rgb(93, 93, 145);
+            color: rgb(104, 104, 151);
             font-family: 'Lobster';
             font-size: 48px;
             /* Adjust font size as needed */
@@ -226,72 +224,72 @@
         <h1 class="bakery-name">Flower</h1>
         <h1 class="bakery-name">Flour</h1>
         <h1 class="bakery-name">Bakery</h1>
-        <img src="berenji.jpg">
-        <img src="nokhod.jpg">
-        <img src="nargili.jpg">
+        <img src="./Bakery Mobile Website_files/berenji.jpg" style="opacity: 1;">
+        <img src="./Bakery Mobile Website_files/nokhod.jpg" style="opacity: 0;">
+        <img src="./Bakery Mobile Website_files/nargili.jpg" style="opacity: 0;">
     </div>
-    <div class="content-wrapper">
-        <header class="content">
+    <div class="content-wrapper content-visible">
+        <header>
             <h1>Welcome to Our Bakery</h1>
         </header>
-        <nav class="content">
+        <nav>
             <ul>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#bakedGoods">Baked Goods</a></li>
-                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="http://127.0.0.1:5500/index.html#about">About Us</a></li>
+                <li><a href="http://127.0.0.1:5500/index.html#bakedGoods">Baked Goods</a></li>
+                <li><a href="http://127.0.0.1:5500/index.html#contact">Contact Us</a></li>
             </ul>
         </nav>
-        <section id="bakedGoods" class="content">
+        <section id="bakedGoods" style="opacity: 1; transition: opacity 1s ease 0s;">
             <ul>
-                <li><span id="seasonal-baked-goods">Seasonal Goods</span></li>
-                <li><span id="year-round-baked-goods">Year-Round Goods</span></li>
+                <li><span id="seasonal-baked-goods">Seasonal Baked Goods</span></li>
+                <li><span id="year-round-baked-goods">Year-Round Baked Goods</span></li>
             </ul>
         </section>
-        <section id="seasonal-section" class="menu-content content">
+        <section id="seasonal-section" class="menu-content" style="opacity: 1; transition: opacity 1s ease 0s;">
             <ul>
                 <li>
-                    <img src="https://via.placeholder.com/150" alt="Seasonal Item 1">
+                    <img src="./Bakery Mobile Website_files/150" alt="Seasonal Item 1">
                     <p>Seasonal Item 1</p>
                 </li>
                 <li>
-                    <img src="https://via.placeholder.com/150" alt="Seasonal Item 2">
+                    <img src="./Bakery Mobile Website_files/150" alt="Seasonal Item 2">
                     <p>Seasonal Item 2</p>
                 </li>
                 <li>
-                    <img src="https://via.placeholder.com/150" alt="Seasonal Item 3">
+                    <img src="./Bakery Mobile Website_files/150" alt="Seasonal Item 3">
                     <p>Seasonal Item 3</p>
                 </li>
             </ul>
         </section>
-        <section id="year-round-section" class="menu-content content">
+        <section id="year-round-section" class="menu-content" style="opacity: 1; transition: opacity 1s ease 0s;">
             <ul>
                 <li>
-                    <img src="https://via.placeholder.com/150" alt="Year-Round Item 1">
+                    <img src="./Bakery Mobile Website_files/150" alt="Year-Round Item 1">
                     <p>Year-Round Item 1</p>
                 </li>
                 <li>
-                    <img src="https://via.placeholder.com/150" alt="Year-Round Item 2">
+                    <img src="./Bakery Mobile Website_files/150" alt="Year-Round Item 2">
                     <p>Year-Round Item 2</p>
                 </li>
                 <li>
-                    <img src="https://via.placeholder.com/150" alt="Year-Round Item 3">
+                    <img src="./Bakery Mobile Website_files/150" alt="Year-Round Item 3">
                     <p>Year-Round Item 3</p>
                 </li>
             </ul>
         </section>
-        <section id="about" class="content">
+        <section id="about" style="opacity: 0; transition: opacity 1s ease 0s;">
             <h2>About Us</h2>
             <p>We are a family-owned bakery dedicated to providing delicious pastries and baked goods using only the
                 finest ingredients.</p>
         </section>
-        <section id="contact" class="content">
+        <section id="contact" style="opacity: 0; transition: opacity 1s ease 0s;">
             <h2>Contact Us</h2>
             <p>Phone: 123-456-7890</p>
             <p>Email: info@bakery.com</p>
             <p>Address: 123 Bakery St, City, Country</p>
         </section>
-        <footer class="content">
-            <p>&copy; 2024 Flower Flour Bakery. All rights reserved.</p>
+        <footer>
+            <p>© 2024 Flower Flour Bakery. All rights reserved.</p>
         </footer>
     </div>
     <script>
@@ -316,20 +314,21 @@
                 }
             });
 
+            // Fade in content on scroll
             window.addEventListener('scroll', () => {
-                const contentSections = document.querySelectorAll('.content');
-                console.log(contentSections)
+                const contentSections = document.querySelectorAll('section');
                 const contentWrapper = document.querySelector('.content-wrapper');
-                const triggerBottom = window.innerHeight / 10 * 9.5; // Trigger fade in at 4/5 of the window height
+                const triggerBottom = window.innerHeight / 5 * 4; // Trigger fade in at 4/5 of the window height
                 contentSections.forEach(section => {
                     const sectionTop = section.getBoundingClientRect().top;
                     if (sectionTop < triggerBottom) {
                         section.style.opacity = '1';
-                        section.style.transition = "opacity 1.25s ease"
+
+                        section.style.transition = "opacity 1s ease"
                     } else {
                         section.style.opacity = '0';
 
-                        section.style.transition = "opacity 1.25s ease"
+                        section.style.transition = "opacity 1s ease"
                     }
                 });
             });
@@ -368,6 +367,44 @@
 
         });
     </script>
-</body>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
 
-</html>
+
+</body></html>
