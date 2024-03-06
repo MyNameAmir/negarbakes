@@ -230,23 +230,23 @@
         <img src="nargili.jpg">
     </div>
     <div class="content-wrapper">
-        <header>
+        <header class="content">
             <h1>Welcome to Our Bakery</h1>
         </header>
-        <nav>
+        <nav class="content">
             <ul>
                 <li><a href="#about">About Us</a></li>
                 <li><a href="#bakedGoods">Baked Goods</a></li>
                 <li><a href="#contact">Contact Us</a></li>
             </ul>
         </nav>
-        <section id="bakedGoods">
+        <section id="bakedGoods" class="content">
             <ul>
                 <li><span id="seasonal-baked-goods">Seasonal Baked Goods</span></li>
                 <li><span id="year-round-baked-goods">Year-Round Baked Goods</span></li>
             </ul>
         </section>
-        <section id="seasonal-section" class="menu-content">
+        <section id="seasonal-section" class="menu-content content">
             <ul>
                 <li>
                     <img src="https://via.placeholder.com/150" alt="Seasonal Item 1">
@@ -262,7 +262,7 @@
                 </li>
             </ul>
         </section>
-        <section id="year-round-section" class="menu-content">
+        <section id="year-round-section" class="menu-content content">
             <ul>
                 <li>
                     <img src="https://via.placeholder.com/150" alt="Year-Round Item 1">
@@ -278,18 +278,18 @@
                 </li>
             </ul>
         </section>
-        <section id="about">
+        <section id="about" class="content">
             <h2>About Us</h2>
             <p>We are a family-owned bakery dedicated to providing delicious pastries and baked goods using only the
                 finest ingredients.</p>
         </section>
-        <section id="contact">
+        <section id="contact" class="content">
             <h2>Contact Us</h2>
             <p>Phone: 123-456-7890</p>
             <p>Email: info@bakery.com</p>
             <p>Address: 123 Bakery St, City, Country</p>
         </section>
-        <footer>
+        <footer class="content">
             <p>&copy; 2024 Flower Flour Bakery. All rights reserved.</p>
         </footer>
     </div>
@@ -317,14 +317,14 @@
 
             // Fade in content on scroll
             window.addEventListener('scroll', () => {
-                const contentSections = document.querySelectorAll('section');
+                const contentSections = document.querySelectorAll('.content');
+                console.log(contentSections)
                 const contentWrapper = document.querySelector('.content-wrapper');
-                const triggerBottom = window.innerHeight / 5 * 4; // Trigger fade in at 4/5 of the window height
+                const triggerBottom = window.innerHeight / 10 * 9.5; // Trigger fade in at 4/5 of the window height
                 contentSections.forEach(section => {
                     const sectionTop = section.getBoundingClientRect().top;
                     if (sectionTop < triggerBottom) {
                         section.style.opacity = '1';
-
                         section.style.transition = "opacity 1s ease"
                     } else {
                         section.style.opacity = '0';
