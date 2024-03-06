@@ -19,7 +19,7 @@
         }
 
         #initialText {
-            position: fixed;
+            /* position: fixed; */
             top: 0;
             left: 0;
             width: 100%;
@@ -28,12 +28,21 @@
             display: flex;
             justify-content: center;
             z-index: 9999;
-            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+            background-color: rgba(255, 255, 255, 0.9);
+            /* Semi-transparent white background */
         }
 
         #initialText img {
-            max-width: 100%;
-            max-height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* object-fit: cover; Ensure the image covers the entire container */
+            transition: opacity 1s ease;
+            /* Add transition effect for opacity */
+            opacity: 0;
+            /* Initially hide all images */
         }
 
         .content-wrapper {
@@ -44,12 +53,14 @@
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            opacity: 0; /* Initially hide content */
-            transition: opacity 1s ease; /* Add transition effect for content */
+            /* opacity: 0; Initially hide content */
+            transition: opacity 1s ease;
+            /* Add transition effect for content */
         }
 
         .content-visible .content-wrapper {
-            opacity: 1; /* Show content when content-visible class is added */
+            opacity: 1;
+            /* Show content when content-visible class is added */
         }
 
         header,
@@ -160,14 +171,63 @@
         .roboto {
             font-family: 'Roboto', sans-serif;
         }
+
+        /* Add hover effect for sections */
+        nav:hover,
+        footer:hover,
+        header:hover,
+        .content-wrapper section:hover {
+            transform: scale(1.05);
+            /* Scale section size by 5% */
+            transition: transform 0.3s ease;
+            /* Add transition effect for scale */
+        }
+
+        /* Add active effect for sections */
+        nav:active,
+        footer:active,
+        header:active,
+        .content-wrapper section:active {
+            transform: scale(1.05);
+            /* Scale section size by 5% */
+            transition: transform 0.3s ease;
+            /* Add transition effect for scale */
+        }
+
+        .bakery-name {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            color: black;
+            font-family: 'Roboto', cursive;
+            font-size: 48px;
+            /* Adjust font size as needed */
+            line-height: 1.5;
+            /* Adjust line height for spacing */
+        }
+
+        .bakery-name:nth-child(1) {
+            top: 30%;
+            /* Adjust the top position for the first word */
+        }
+
+        .bakery-name:nth-child(3) {
+            top: 70%;
+            /* Adjust the top position for the last word */
+        }
     </style>
 </head>
 
 <body>
     <div id="initialText">
-        <img src="https://via.placeholder.com/600x300/ff0000/ffffff?text=Image+1" class="active">
-        <img src="https://via.placeholder.com/600x300/00ff00/000000?text=Image+2">
-        <img src="https://via.placeholder.com/600x300/0000ff/ffffff?text=Image+3">
+        <h1 class="bakery-name">Flower</h1>
+        <h1 class="bakery-name">Flour</h1>
+        <h1 class="bakery-name">Bakery</h1>
+        <img src="berenji.jpg">
+        <img src="nokhod.jpg">
+        <img src="nargili.jpg">
     </div>
     <div class="content-wrapper">
         <header>
@@ -235,14 +295,16 @@
     </div>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            const images = document.querySelectorAll('#initialText img');
+            let images = document.querySelectorAll('#initialText img');
+            images = Array.from(images);
+            console.log(images);
             let currentIndex = 0;
-
+            images[currentIndex].style.opacity = "1"; // Initially show the first image
             setInterval(() => {
-                images[currentIndex].classList.remove('active');
-                currentIndex = (currentIndex + 1) % images.length;
-                images[currentIndex].classList.add('active');
-            }, 3000); // Change image every 3 seconds
+                images[currentIndex].style.opacity = "0"; // Hide the current image
+                currentIndex = (currentIndex + 1) % images.length; // Move to the next image
+                images[currentIndex].style.opacity = "1"; // Show the next image
+            }, 2000); // Change image every 2 seconds
 
             // Show content after scrolling
             window.addEventListener('scroll', () => {
@@ -252,6 +314,58 @@
                     contentWrapper.classList.add('content-visible');
                 }
             });
+
+            // Fade in content on scroll
+            window.addEventListener('scroll', () => {
+                const contentSections = document.querySelectorAll('section');
+                const contentWrapper = document.querySelector('.content-wrapper');
+                const triggerBottom = window.innerHeight / 5 * 4; // Trigger fade in at 4/5 of the window height
+                contentSections.forEach(section => {
+                    const sectionTop = section.getBoundingClientRect().top;
+                    if (sectionTop < triggerBottom) {
+                        section.style.opacity = '1';
+
+                        section.style.transition = "opacity 1s ease"
+                    } else {
+                        section.style.opacity = '0';
+
+                        section.style.transition = "opacity 1s ease"
+                    }
+                });
+            });
+
+
+            let sznClick = false;
+            let yrClick = false;
+
+            // Show seasonal baked goods section when clicked
+            document.getElementById('seasonal-baked-goods').addEventListener('click', function () {
+                if(!sznClick){
+                    document.getElementById('seasonal-section').classList.add('menu-content-visible');
+                    sznClick = true;
+                }else{
+                    document.getElementById('seasonal-section').classList.remove('menu-content-visible');
+                    sznClick = false;
+                }
+                document.getElementById('year-round-section').classList.remove('menu-content-visible');
+            });
+
+            // Show year-round baked goods section when clicked
+            document.getElementById('year-round-baked-goods').addEventListener('click', function () {
+
+                if(!yrClick){
+                    document.getElementById('year-round-section').classList.add('menu-content-visible');
+                    yrClick = true;
+                }else{
+                    document.getElementById('year-round-section').classList.remove('menu-content-visible');
+                    yrClick = false;
+                }
+                document.getElementById('seasonal-section').classList.remove('menu-content-visible');
+            });
+
+            // Previous code...
+
+
         });
     </script>
 </body>

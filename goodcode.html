@@ -172,62 +172,23 @@
             font-family: 'Roboto', sans-serif;
         }
 
-        /* Add hover effect for sections */
-        nav:hover,
-        footer:hover,
-        header:hover,
-        .content-wrapper section:hover {
-            transform: scale(1.05);
-            /* Scale section size by 5% */
-            transition: transform 0.3s ease;
-            /* Add transition effect for scale */
-        }
 
-        /* Add active effect for sections */
-        nav:active,
-        footer:active,
-        header:active,
+        /* Add hover effect for sections */
+        .content-wrapper section:hover,
         .content-wrapper section:active {
             transform: scale(1.05);
             /* Scale section size by 5% */
             transition: transform 0.3s ease;
-            /* Add transition effect for scale */
-        }
-
-        .bakery-name {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 1;
-            color: black;
-            font-family: 'Roboto', cursive;
-            font-size: 48px;
-            /* Adjust font size as needed */
-            line-height: 1.5;
-            /* Adjust line height for spacing */
-        }
-
-        .bakery-name:nth-child(1) {
-            top: 30%;
-            /* Adjust the top position for the first word */
-        }
-
-        .bakery-name:nth-child(3) {
-            top: 70%;
-            /* Adjust the top position for the last word */
+            /* Add transition effect */
         }
     </style>
 </head>
 
 <body>
     <div id="initialText">
-        <h1 class="bakery-name">Flower</h1>
-        <h1 class="bakery-name">Flour</h1>
-        <h1 class="bakery-name">Bakery</h1>
-        <img src="berenji.jpg">
-        <img src="nokhod.jpg">
-        <img src="nargili.jpg">
+        <img src="https://via.placeholder.com/600x300/ff0000/ffffff?text=Image+1">
+        <img src="https://via.placeholder.com/600x300/00ff00/000000?text=Image+2">
+        <img src="https://via.placeholder.com/600x300/0000ff/ffffff?text=Image+3">
     </div>
     <div class="content-wrapper">
         <header>
@@ -324,48 +285,15 @@
                     const sectionTop = section.getBoundingClientRect().top;
                     if (sectionTop < triggerBottom) {
                         section.style.opacity = '1';
-
+                        section.style.transform = 'translateY(0)';
                         section.style.transition = "opacity 1s ease"
                     } else {
                         section.style.opacity = '0';
-
+                        section.style.transform = 'translateY(50px)';
                         section.style.transition = "opacity 1s ease"
                     }
                 });
             });
-
-
-            let sznClick = false;
-            let yrClick = false;
-
-            // Show seasonal baked goods section when clicked
-            document.getElementById('seasonal-baked-goods').addEventListener('click', function () {
-                if(!sznClick){
-                    document.getElementById('seasonal-section').classList.add('menu-content-visible');
-                    sznClick = true;
-                }else{
-                    document.getElementById('seasonal-section').classList.remove('menu-content-visible');
-                    sznClick = false;
-                }
-                document.getElementById('year-round-section').classList.remove('menu-content-visible');
-            });
-
-            // Show year-round baked goods section when clicked
-            document.getElementById('year-round-baked-goods').addEventListener('click', function () {
-
-                if(!yrClick){
-                    document.getElementById('year-round-section').classList.add('menu-content-visible');
-                    yrClick = true;
-                }else{
-                    document.getElementById('year-round-section').classList.remove('menu-content-visible');
-                    yrClick = false;
-                }
-                document.getElementById('seasonal-section').classList.remove('menu-content-visible');
-            });
-
-            // Previous code...
-
-
         });
     </script>
 </body>
