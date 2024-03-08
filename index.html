@@ -167,7 +167,8 @@
             width: 100px;
             height: auto;
             border-radius: 50%;
-            cursor: pointer; /* Add cursor pointer to images */
+            cursor: pointer;
+            /* Add cursor pointer to images */
         }
 
         /* Change font to Roboto */
@@ -222,8 +223,8 @@
         }
 
         .menu-image {
-            width: 45vw;
-            height: 45vw;
+            width: 75vw;
+            height: 75vw;
         }
 
         .image-ul {
@@ -242,19 +243,26 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+            background-color: rgba(0, 0, 0, 0.8);
+            /* Semi-transparent black background */
             z-index: 99999;
             display: none;
             justify-content: center;
             align-items: center;
+            overflow: hidden;
+            /* Ensure overflow is hidden */
         }
 
         .gallery-content {
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
             align-items: center;
             width: 80%;
             height: 80%;
+            overflow-x: auto;
+            /* Enable horizontal scrolling */
+            white-space: nowrap;
+            /* Prevent line breaks */
         }
 
         .gallery-image {
@@ -350,7 +358,9 @@
         <div class="gallery-container" id="galleryContainer">
             <div class="gallery-content">
                 <span class="close-button" onclick="closeGallery()">&times;</span> <!-- Close button -->
+                <button class="prev-button" onclick="prevImage()">&#10094;</button> <!-- Previous button -->
                 <img class="gallery-image" id="galleryImage" src="" alt="Gallery Image">
+                <button class="next-button" onclick="nextImage()">&#10095;</button> <!-- Next button -->
             </div>
         </div>
         <section id="about" class="content">
@@ -369,17 +379,80 @@
         </footer>
     </div>
     <script>
-        // Function to open the gallery
-        function openGallery(image) {
-            document.getElementById('galleryImage').src = image.src; // Set clicked image as source
-            document.getElementById('galleryContainer').style.display = 'flex'; // Display the gallery
-        }
+        let currentIndex = 0;
+        let images = [];
 
-        // Function to close the gallery
-        function closeGallery() {
-            document.getElementById('galleryContainer').style.display = 'none'; // Hide the gallery
-        }
+        document.addEventListener('DOMContentLoaded', function () {
+            // Initialize images array with image sources
+            images = Array.from(document.querySelectorAll('.menu-image')).map(img => img.src);
 
+            let initialImages = document.querySelectorAll('#initialText img');
+            initialImages = Array.from(initialImages);
+            initialImages.forEach((img, index) => {
+                img.style.opacity = "0";
+            });
+
+            let currentImage = initialImages[currentIndex];
+            currentImage.style.opacity = "1"; // Initially show the first image
+
+            setInterval(() => {
+                currentImage.style.opacity = "0"; // Hide the current image
+                currentIndex = (currentIndex + 1) % initialImages.length; // Move to the next image
+                currentImage = initialImages[currentIndex];
+                currentImage.style.opacity = "1"; // Show the next image
+            }, 2000); // Change image every 2 seconds
+        });
+        const galleries = document.querySelectorAll('.image-ul'); // Get all image galleries
+        galleries.forEach(gallery => {
+            const images = gallery.querySelectorAll('img'); // Get images in each gallery
+            let currentIndex = 0; // Initialize current index for each gallery
+
+            images.forEach((image, index) => {
+                image.addEventListener('click', () => openGallery(image, images)); // Add click event listener to each image
+            });
+
+            function openGallery(clickedImage, galleryImages) {
+                currentIndex = Array.from(galleryImages).indexOf(clickedImage); // Get index of clicked image
+                showImage(currentIndex, galleryImages);
+                document.getElementById('galleryContainer').style.display = 'flex'; // Display the gallery
+            }
+
+            function closeGallery() {
+                document.getElementById('galleryContainer').style.display = 'none'; // Hide the gallery
+            }
+
+            function showImage(index, galleryImages) {
+                const galleryImage = document.getElementById('galleryImage');
+                galleryImage.src = galleryImages[index].src; // Set image source
+                currentIndex = index; // Update current index
+            }
+
+            function nextImage(galleryImages) {
+                currentIndex = (currentIndex + 1) % galleryImages.length; // Get index of next image
+                showImage(currentIndex, galleryImages);
+            }
+
+            function prevImage(galleryImages) {
+                currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length; // Get index of previous image
+                showImage(currentIndex, galleryImages);
+            }
+
+            document.addEventListener('keydown', function (event) {
+                if (event.key === 'Escape') {
+                    closeGallery(); // Close gallery when Escape key is pressed
+                }
+            });
+
+            const nextButtons = document.querySelectorAll('.next-button');
+            nextButtons.forEach(button => {
+                button.addEventListener('click', () => nextImage(images)); // Add event listener to next buttons
+            });
+
+            const prevButtons = document.querySelectorAll('.prev-button');
+            prevButtons.forEach(button => {
+                button.addEventListener('click', () => prevImage(images)); // Add event listener to previous buttons
+            });
+        });
 
 
         document.addEventListener('DOMContentLoaded', function () {
