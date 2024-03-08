@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
+            width: 100vw;
             font-family: 'Roboto', cursive;
             margin: 0;
             padding: 0;
@@ -46,11 +47,11 @@
         }
 
         .content-wrapper {
-            width: 100vw;
+            width: 90vw;
             margin: 0 auto;
             background-color: lavender;
             /* Set wrapper background color */
-            padding: 20px;
+            padding: 5vw;
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
             /* opacity: 0; Initially hide content */
@@ -77,7 +78,7 @@
         nav {
             background-color: lavender;
             /* Set navbar background color */
-            
+
             border-bottom: 2px solid #ccc;
             padding: 10px;
             position: sticky;
@@ -123,7 +124,7 @@
         }
 
         .menu-content-visible {
-            display: block;
+            display: grid;
             opacity: 1;
         }
 
@@ -131,7 +132,7 @@
         #year-round-baked-goods {
             cursor: pointer;
             text-decoration: underline;
-            
+
         }
 
         #menu ul {
@@ -218,6 +219,20 @@
             top: 70%;
             /* Adjust the top position for the last word */
         }
+
+        .menu-image {
+            width: 45vw;
+            height: 20vh;
+        }
+
+        .image-ul {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: baseline;
+            flex-wrap: wrap;
+            align-content: space-around;
+        }
     </style>
 </head>
 
@@ -226,7 +241,7 @@
         <h1 class="bakery-name">Flower</h1>
         <h1 class="bakery-name">Flour</h1>
         <h1 class="bakery-name">Bakery</h1>
-        <img src="berenji.jpg">
+        <img src="custom-cakes/E8FF9602-55D8-487D-9734-890E402812FC.JPG">
         <img src="nokhod.jpg">
         <img src="nargili.jpg">
     </div>
@@ -247,34 +262,52 @@
                 <li><span id="year-round-baked-goods">Year-Round Goods</span></li>
             </ul>
         </section>
-        <section id="seasonal-section" class="menu-content content">
-            <ul>
+        <section id="custom-cakes" class="menu-content content">
+            <ul class="image-ul">
                 <li>
-                    <img src="https://via.placeholder.com/150" alt="Seasonal Item 1">
-                    <p>Seasonal Item 1</p>
+                    <img class="menu-image" src="custom-cakes/445C87B4-18E5-4547-8BBE-7098C8FD7472.JPG"
+                        alt="Seasonal Item 1">
+                    <p>Cake 1</p>
                 </li>
                 <li>
-                    <img src="https://via.placeholder.com/150" alt="Seasonal Item 2">
-                    <p>Seasonal Item 2</p>
+                    <img class="menu-image" src="custom-cakes/4E331234-262E-4BD2-9D38-49204E281DE7.JPG"
+                        alt="Seasonal Item 2">
+                    <p>Cake 2</p>
                 </li>
                 <li>
-                    <img src="https://via.placeholder.com/150" alt="Seasonal Item 3">
-                    <p>Seasonal Item 3</p>
+                    <img class="menu-image" src="custom-cakes/88187BBD-6D78-4EA8-A3CE-73C0427CDD3D.JPG"
+                        alt="Seasonal Item 3">
+                    <p>Cake 3</p>
+                </li>
+                <li>
+                    <img class="menu-image" src="custom-cakes/b90f2c36-4d0b-4c65-b84c-5b796267f839.JPG"
+                        alt="Seasonal Item 4">
+                    <p>Cake 4</p>
+                </li>
+                <li>
+                    <img class="menu-image" src="custom-cakes/CC5C6981-F6ED-4C37-A859-8DF53FC5F6F5.JPG"
+                        alt="Seasonal Item 5">
+                    <p>Cake 5</p>
+                </li>
+                <li>
+                    <img class="menu-image" src="custom-cakes/E8FF9602-55D8-487D-9734-890E402812FC.JPG"
+                        alt="Seasonal Item 5">
+                    <p>Cake 6</p>
                 </li>
             </ul>
         </section>
         <section id="year-round-section" class="menu-content content">
             <ul>
                 <li>
-                    <img src="https://via.placeholder.com/150" alt="Year-Round Item 1">
+                    <img class="menu-image" src="https://via.placeholder.com/150" alt="Year-Round Item 1">
                     <p>Year-Round Item 1</p>
                 </li>
                 <li>
-                    <img src="https://via.placeholder.com/150" alt="Year-Round Item 2">
+                    <img class="menu-image" src="https://via.placeholder.com/150" alt="Year-Round Item 2">
                     <p>Year-Round Item 2</p>
                 </li>
                 <li>
-                    <img src="https://via.placeholder.com/150" alt="Year-Round Item 3">
+                    <img class="menu-image" src="https://via.placeholder.com/150" alt="Year-Round Item 3">
                     <p>Year-Round Item 3</p>
                 </li>
             </ul>
@@ -340,11 +373,11 @@
 
             // Show seasonal baked goods section when clicked
             document.getElementById('seasonal-baked-goods').addEventListener('click', function () {
-                if(!sznClick){
-                    document.getElementById('seasonal-section').classList.add('menu-content-visible');
+                if (!sznClick) {
+                    document.getElementById('custom-cakes').classList.add('menu-content-visible');
                     sznClick = true;
-                }else{
-                    document.getElementById('seasonal-section').classList.remove('menu-content-visible');
+                } else {
+                    document.getElementById('custom-cakes').classList.remove('menu-content-visible');
                     sznClick = false;
                 }
                 document.getElementById('year-round-section').classList.remove('menu-content-visible');
@@ -353,14 +386,14 @@
             // Show year-round baked goods section when clicked
             document.getElementById('year-round-baked-goods').addEventListener('click', function () {
 
-                if(!yrClick){
+                if (!yrClick) {
                     document.getElementById('year-round-section').classList.add('menu-content-visible');
                     yrClick = true;
-                }else{
+                } else {
                     document.getElementById('year-round-section').classList.remove('menu-content-visible');
                     yrClick = false;
                 }
-                document.getElementById('seasonal-section').classList.remove('menu-content-visible');
+                document.getElementById('custom-cakes').classList.remove('menu-content-visible');
             });
 
             // Previous code...
