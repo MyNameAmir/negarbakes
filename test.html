@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
+            width: 100vw;
             font-family: 'Roboto', cursive;
             margin: 0;
             padding: 0;
@@ -46,11 +47,11 @@
         }
 
         .content-wrapper {
-            width: 80vw;
+            width: 90vw;
             margin: 0 auto;
             background-color: lavender;
             /* Set wrapper background color */
-            padding: 20px;
+            padding: 5vw;
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
             /* opacity: 0; Initially hide content */
@@ -69,7 +70,7 @@
         footer {
             text-align: center;
             padding: 20px;
-            border: 2px solid #ccc;
+            border-bottom: 2px solid #ccc;
             border-radius: 5px;
             margin-bottom: 20px;
         }
@@ -77,8 +78,8 @@
         nav {
             background-color: lavender;
             /* Set navbar background color */
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+            border-bottom: 2px solid #ccc;
             padding: 10px;
             position: sticky;
             top: 0;
@@ -90,8 +91,10 @@
             /* Add this to make the navbar take the full width */
         }
 
-        nav ul {
+        ul {
             list-style-type: none;
+            display: flex;
+            justify-content: space-around;
             /* Remove bullet points */
             padding: 0;
             margin: 0;
@@ -101,7 +104,6 @@
 
         nav ul li {
             display: inline;
-            margin-right: 20px;
         }
 
         li {
@@ -122,7 +124,7 @@
         }
 
         .menu-content-visible {
-            display: block;
+            display: grid;
             opacity: 1;
         }
 
@@ -130,7 +132,7 @@
         #year-round-baked-goods {
             cursor: pointer;
             text-decoration: underline;
-            color: blue;
+
         }
 
         #menu ul {
@@ -200,7 +202,7 @@
             left: 50%;
             transform: translate(-50%, -50%);
             z-index: 1;
-            color: black;
+            color: rgb(93, 93, 145);
             font-family: 'Lobster';
             font-size: 48px;
             /* Adjust font size as needed */
@@ -217,6 +219,20 @@
             top: 70%;
             /* Adjust the top position for the last word */
         }
+
+        .menu-image {
+            width: 45vw;
+            height: 45vw;
+        }
+
+        .image-ul {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: baseline;
+            flex-wrap: wrap;
+            align-content: space-around;
+        }
     </style>
 </head>
 
@@ -225,71 +241,89 @@
         <h1 class="bakery-name">Flower</h1>
         <h1 class="bakery-name">Flour</h1>
         <h1 class="bakery-name">Bakery</h1>
-        <img src="berenji.jpg">
+        <img src="custom-cakes/E8FF9602-55D8-487D-9734-890E402812FC.JPG">
         <img src="nokhod.jpg">
         <img src="nargili.jpg">
     </div>
     <div class="content-wrapper">
-        <header>
+        <header class="content">
             <h1>Welcome to Our Bakery</h1>
         </header>
-        <nav>
+        <nav class="content">
             <ul>
                 <li><a href="#about">About Us</a></li>
                 <li><a href="#bakedGoods">Baked Goods</a></li>
                 <li><a href="#contact">Contact Us</a></li>
             </ul>
         </nav>
-        <section id="bakedGoods">
+        <section id="bakedGoods" class="content">
             <ul>
-                <li><span id="seasonal-baked-goods">Seasonal Baked Goods</span></li>
-                <li><span id="year-round-baked-goods">Year-Round Baked Goods</span></li>
+                <li><span id="seasonal-baked-goods">Cakes</span></li>
+                <li><span id="year-round-baked-goods">Year-Round Goods</span></li>
             </ul>
         </section>
-        <section id="seasonal-section" class="menu-content">
-            <ul>
+        <section id="custom-cakes" class="menu-content content">
+            <ul class="image-ul">
                 <li>
-                    <img src="https://via.placeholder.com/150" alt="Seasonal Item 1">
-                    <p>Seasonal Item 1</p>
+                    <img class="menu-image" src="custom-cakes/445C87B4-18E5-4547-8BBE-7098C8FD7472.JPG"
+                        alt="Seasonal Item 1">
+                    <p>Cake 1</p>
                 </li>
                 <li>
-                    <img src="https://via.placeholder.com/150" alt="Seasonal Item 2">
-                    <p>Seasonal Item 2</p>
+                    <img class="menu-image" src="custom-cakes/4E331234-262E-4BD2-9D38-49204E281DE7.JPG"
+                        alt="Seasonal Item 2">
+                    <p>Cake 2</p>
                 </li>
                 <li>
-                    <img src="https://via.placeholder.com/150" alt="Seasonal Item 3">
-                    <p>Seasonal Item 3</p>
+                    <img class="menu-image" src="custom-cakes/88187BBD-6D78-4EA8-A3CE-73C0427CDD3D.JPG"
+                        alt="Seasonal Item 3">
+                    <p>Cake 3</p>
+                </li>
+                <li>
+                    <img class="menu-image" src="custom-cakes/b90f2c36-4d0b-4c65-b84c-5b796267f839.JPG"
+                        alt="Seasonal Item 4">
+                    <p>Cake 4</p>
+                </li>
+                <li>
+                    <img class="menu-image" src="custom-cakes/CC5C6981-F6ED-4C37-A859-8DF53FC5F6F5.JPG"
+                        alt="Seasonal Item 5">
+                    <p>Cake 5</p>
+                </li>
+                <li>
+                    <img class="menu-image" src="custom-cakes/E8FF9602-55D8-487D-9734-890E402812FC.JPG"
+                        alt="Seasonal Item 5">
+                    <p>Cake 6</p>
                 </li>
             </ul>
         </section>
-        <section id="year-round-section" class="menu-content">
+        <section id="year-round-section" class="menu-content content">
             <ul>
                 <li>
-                    <img src="https://via.placeholder.com/150" alt="Year-Round Item 1">
+                    <img class="menu-image" src="https://via.placeholder.com/150" alt="Year-Round Item 1">
                     <p>Year-Round Item 1</p>
                 </li>
                 <li>
-                    <img src="https://via.placeholder.com/150" alt="Year-Round Item 2">
+                    <img class="menu-image" src="https://via.placeholder.com/150" alt="Year-Round Item 2">
                     <p>Year-Round Item 2</p>
                 </li>
                 <li>
-                    <img src="https://via.placeholder.com/150" alt="Year-Round Item 3">
+                    <img class="menu-image" src="https://via.placeholder.com/150" alt="Year-Round Item 3">
                     <p>Year-Round Item 3</p>
                 </li>
             </ul>
         </section>
-        <section id="about">
+        <section id="about" class="content">
             <h2>About Us</h2>
             <p>We are a family-owned bakery dedicated to providing delicious pastries and baked goods using only the
                 finest ingredients.</p>
         </section>
-        <section id="contact">
+        <section id="contact" class="content">
             <h2>Contact Us</h2>
             <p>Phone: 123-456-7890</p>
             <p>Email: info@bakery.com</p>
             <p>Address: 123 Bakery St, City, Country</p>
         </section>
-        <footer>
+        <footer class="content">
             <p>&copy; 2024 Flower Flour Bakery. All rights reserved.</p>
         </footer>
     </div>
@@ -315,21 +349,20 @@
                 }
             });
 
-            // Fade in content on scroll
             window.addEventListener('scroll', () => {
-                const contentSections = document.querySelectorAll('section');
+                const contentSections = document.querySelectorAll('.content');
+                console.log(contentSections)
                 const contentWrapper = document.querySelector('.content-wrapper');
-                const triggerBottom = window.innerHeight / 5 * 4; // Trigger fade in at 4/5 of the window height
+                const triggerBottom = window.innerHeight / 10 * 9.5; // Trigger fade in at 4/5 of the window height
                 contentSections.forEach(section => {
                     const sectionTop = section.getBoundingClientRect().top;
                     if (sectionTop < triggerBottom) {
                         section.style.opacity = '1';
-
-                        section.style.transition = "opacity 1s ease"
+                        section.style.transition = "opacity 1.25s ease"
                     } else {
                         section.style.opacity = '0';
 
-                        section.style.transition = "opacity 1s ease"
+                        section.style.transition = "opacity 1.25s ease"
                     }
                 });
             });
@@ -340,11 +373,11 @@
 
             // Show seasonal baked goods section when clicked
             document.getElementById('seasonal-baked-goods').addEventListener('click', function () {
-                if(!sznClick){
-                    document.getElementById('seasonal-section').classList.add('menu-content-visible');
+                if (!sznClick) {
+                    document.getElementById('custom-cakes').classList.add('menu-content-visible');
                     sznClick = true;
-                }else{
-                    document.getElementById('seasonal-section').classList.remove('menu-content-visible');
+                } else {
+                    document.getElementById('custom-cakes').classList.remove('menu-content-visible');
                     sznClick = false;
                 }
                 document.getElementById('year-round-section').classList.remove('menu-content-visible');
@@ -353,14 +386,14 @@
             // Show year-round baked goods section when clicked
             document.getElementById('year-round-baked-goods').addEventListener('click', function () {
 
-                if(!yrClick){
+                if (!yrClick) {
                     document.getElementById('year-round-section').classList.add('menu-content-visible');
                     yrClick = true;
-                }else{
+                } else {
                     document.getElementById('year-round-section').classList.remove('menu-content-visible');
                     yrClick = false;
                 }
-                document.getElementById('seasonal-section').classList.remove('menu-content-visible');
+                document.getElementById('custom-cakes').classList.remove('menu-content-visible');
             });
 
             // Previous code...
