@@ -52,6 +52,7 @@
             background-color: lavender;
             /* Set wrapper background color */
             padding: 5vw;
+            padding-top: 0;
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
             /* opacity: 0; Initially hide content */
@@ -257,7 +258,7 @@
             display: flex;
             justify-content: space-around;
             align-items: center;
-            width: 80%;
+            width: 100%;
             height: 80%;
             overflow-x: auto;
             /* Enable horizontal scrolling */
@@ -266,7 +267,7 @@
         }
 
         .gallery-image {
-            max-width: 90%;
+            max-width: 80%;
             max-height: 90%;
             border-radius: 10px;
         }
@@ -278,6 +279,74 @@
             font-size: 24px;
             color: white;
             cursor: pointer;
+
+        }
+
+        .next-button,
+        .prev-button {
+            align-items: center;
+            appearance: none;
+            background-color: #FCFCFD;
+            border-radius: 4px;
+            border-width: 0;
+            box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+            box-sizing: border-box;
+            color: #36395A;
+            cursor: pointer;
+            display: inline-flex;
+            font-family: "JetBrains Mono", monospace;
+            justify-content: center;
+            line-height: 1;
+            list-style: none;
+            overflow: hidden;
+
+            position: relative;
+            text-align: left;
+            text-decoration: none;
+            transition: box-shadow .15s, transform .15s;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            white-space: nowrap;
+            will-change: box-shadow, transform;
+            font-size: 18px;
+            height: 40vh;
+            background-color: lavender;
+        }
+
+
+        .prev-button:focus,
+        .next-button:focus {
+            box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+        }
+
+        .prev-button:hover,
+        .next-button:hover {
+            box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+            transform: translateY(-2px);
+        }
+
+        .prev-button:active,
+        .next-button:active {
+            box-shadow: #D6D6E7 0 3px 7px inset;
+            transform: translateY(2px);
+        }
+
+        #headerText {
+            color: rgb(93, 93, 145);
+            font-family: 'Lobster';
+            font-size: 88px;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+
+        #about {
+            text-align: justify;
+            text-justify: inter-word;
         }
     </style>
 </head>
@@ -287,13 +356,19 @@
         <h1 class="bakery-name">Flower</h1>
         <h1 class="bakery-name">Flour</h1>
         <h1 class="bakery-name">Bakery</h1>
-        <img src="custom-cakes/E8FF9602-55D8-487D-9734-890E402812FC.JPG">
-        <img src="nokhod.jpg">
-        <img src="nargili.jpg">
+        <img src="custom-cakes/6.JPG">
+        <img src="Nowrooz/2.jpg">
+        <img src="specialities/3.jpg">
+        <img src="custom-cakes/6.JPG">
+        <img src="Nowrooz/2.jpg">
+        <img src="specialities/2.jpg">
+        <img src="custom-cakes/11.JPG">
+        <img src="Nowrooz/1.jpg">
+        <img src="specialities/3.jpg">
     </div>
     <div class="content-wrapper">
         <header class="content">
-            <h1>Welcome to Our Bakery</h1>
+            <h1 id="headerText">Flower Flour Bakery</h1>
         </header>
         <nav class="content">
             <ul>
@@ -305,52 +380,87 @@
 
         <section id="bakedGoods" class="content">
             <ul>
-                <li><span id="seasonal-baked-goods">Cakes</span></li>
-                <li><span id="year-round-baked-goods">Year-Round Goods</span></li>
+                <li><span id="cakes">Cakes</span></li>
+                <li><span id="seasonal-goods">Seasonal Goods</span></li>
+                <li><span id="specialities">Specialities</span></li>
             </ul>
         </section>
         <section id="custom-cakes" class="menu-content  content">
             <ul class="image-ul">
                 <li>
-                    <img class="menu-image" src="custom-cakes/445C87B4-18E5-4547-8BBE-7098C8FD7472.JPG"
-                        alt="Seasonal Item 1" onclick="openGallery(this)">
+                    <img class="menu-image" src="custom-cakes/1.JPG" alt="Seasonal Item 1">
                 </li>
                 <!-- Add onclick event to open the gallery -->
                 <li>
-                    <img class="menu-image" src="custom-cakes/4E331234-262E-4BD2-9D38-49204E281DE7.JPG"
-                        alt="Seasonal Item 2" onclick="openGallery(this)">
+                    <img class="menu-image" src="custom-cakes/2.JPG" alt="Seasonal Item 2">
                 </li>
                 <li>
-                    <img class="menu-image" src="custom-cakes/88187BBD-6D78-4EA8-A3CE-73C0427CDD3D.JPG"
-                        alt="Seasonal Item 3" onclick="openGallery(this)">
+                    <img class="menu-image" src="custom-cakes/3.JPG" alt="Seasonal Item 3">
                 </li>
                 <li>
-                    <img class="menu-image" src="custom-cakes/b90f2c36-4d0b-4c65-b84c-5b796267f839.JPG"
-                        alt="Seasonal Item 4" onclick="openGallery(this)">
+                    <img class="menu-image" src="custom-cakes/4.JPG" alt="Seasonal Item 4">
                 </li>
                 <li>
-                    <img class="menu-image" src="custom-cakes/CC5C6981-F6ED-4C37-A859-8DF53FC5F6F5.JPG"
-                        alt="Seasonal Item 5" onclick="openGallery(this)">
+                    <img class="menu-image" src="custom-cakes/5.JPG" alt="Seasonal Item 5">
                 </li>
                 <li>
-                    <img class="menu-image" src="custom-cakes/E8FF9602-55D8-487D-9734-890E402812FC.JPG"
-                        alt="Seasonal Item 6" onclick="openGallery(this)">
+                    <img class="menu-image" src="custom-cakes/6.JPG" alt="Seasonal Item 6">
+                </li>
+                <li>
+                    <img class="menu-image" src="custom-cakes/7.JPG" alt="Seasonal Item 1">
+                </li>
+                <!-- Add onclick event to open the gallery -->
+                <li>
+                    <img class="menu-image" src="custom-cakes/8.JPG" alt="Seasonal Item 2">
+                </li>
+                <li>
+                    <img class="menu-image" src="custom-cakes/9.JPG" alt="Seasonal Item 3">
+                </li>
+                <li>
+                    <img class="menu-image" src="custom-cakes/10.JPG" alt="Seasonal Item 4">
+                </li>
+                <li>
+                    <img class="menu-image" src="custom-cakes/11.JPG" alt="Seasonal Item 5">
+                </li>
+                <li>
+                    <img class="menu-image" src="custom-cakes/12.JPG" alt="Seasonal Item 6">
+                </li>
+                <li>
+                    <img class="menu-image" src="custom-cakes/13.JPG" alt="Seasonal Item 5">
+                </li>
+                <li>
+                    <img class="menu-image" src="custom-cakes/14.JPG" alt="Seasonal Item 6">
                 </li>
             </ul>
         </section>
-        <section id="year-round-section" class="menu-content content">
-            <ul>
+        <section id="seasonal-section" class="menu-content content">
+            <ul class="image-ul">
                 <li>
-                    <img class="menu-image" src="https://via.placeholder.com/150" alt="Year-Round Item 1">
-                    <p>Year-Round Item 1</p>
+                    <img class="menu-image" src="Nowrooz/1.jpg" alt="Seasonal Item 1">
+                </li>
+                <!-- Add onclick event to open the gallery -->
+                <li>
+                    <img class="menu-image" src="Nowrooz/2.jpg" alt="Seasonal Item 2">
                 </li>
                 <li>
-                    <img class="menu-image" src="https://via.placeholder.com/150" alt="Year-Round Item 2">
-                    <p>Year-Round Item 2</p>
+                    <img class="menu-image" src="Nowrooz/3.jpg" alt="Seasonal Item 3">
                 </li>
                 <li>
-                    <img class="menu-image" src="https://via.placeholder.com/150" alt="Year-Round Item 3">
-                    <p>Year-Round Item 3</p>
+                    <img class="menu-image" src="Nowrooz/4.jpg" alt="Seasonal Item 4">
+                </li>
+            </ul>
+        </section>
+        <section id="specialities-section" class="menu-content content">
+            <ul class="image-ul">
+                <li>
+                    <img class="menu-image" src="specialities/1.jpg" alt="Seasonal Item 1">
+                </li>
+                <!-- Add onclick event to open the gallery -->
+                <li>
+                    <img class="menu-image" src="specialities/2.jpg" Seasonal Item 2">
+                </li>
+                <li>
+                    <img class="menu-image" src="specialities/3.jpg" alt="Seasonal Item 3">
                 </li>
             </ul>
         </section>
@@ -358,21 +468,59 @@
         <div class="gallery-container" id="galleryContainer">
             <div class="gallery-content">
                 <span class="close-button" onclick="closeGallery()">&times;</span> <!-- Close button -->
-                <button class="prev-button" onclick="prevImage()">&#10094;</button> <!-- Previous button -->
+                <button class="prev-button" role="button">&#10094;</button> <!-- Previous button -->
                 <img class="gallery-image" id="galleryImage" src="" alt="Gallery Image">
-                <button class="next-button" onclick="nextImage()">&#10095;</button> <!-- Next button -->
+                <button class="next-button" role="button">&#10095;</button> <!-- Next button -->
             </div>
         </div>
         <section id="about" class="content">
             <h2>About Us</h2>
-            <p>We are a family-owned bakery dedicated to providing delicious pastries and baked goods using only the
-                finest ingredients.</p>
+            <p id="about">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                labore et
+                dolore magna aliqua. Vel orci porta non pulvinar neque laoreet. Egestas integer eget aliquet nibh
+                praesent. Enim facilisis gravida neque convallis a. Donec pretium vulputate sapien nec sagittis.
+                Scelerisque viverra mauris in aliquam. Ut tristique et egestas quis ipsum suspendisse ultrices gravida.
+                Nunc mi ipsum faucibus vitae aliquet. Suspendisse sed nisi lacus sed viverra tellus. Praesent semper
+                feugiat nibh sed pulvinar proin gravida hendrerit lectus. Turpis egestas maecenas pharetra convallis
+                posuere morbi leo.
+
+                Vitae sapien pellentesque habitant morbi tristique senectus et netus. Ac tincidunt vitae semper quis
+                lectus nulla at. Arcu odio ut sem nulla pharetra. Luctus accumsan tortor posuere ac ut consequat semper.
+                Sodales ut eu sem integer vitae justo eget magna. Tellus in metus vulputate eu scelerisque felis
+                imperdiet proin. Eget lorem dolor sed viverra ipsum nunc aliquet. Pulvinar elementum integer enim neque
+                volutpat ac tincidunt vitae. Tristique senectus et netus et malesuada fames. Odio morbi quis commodo
+                odio aenean sed adipiscing.
+
+                Scelerisque eleifend donec pretium vulputate sapien nec. Ac felis donec et odio pellentesque diam
+                volutpat commodo. Massa eget egestas purus viverra. Morbi leo urna molestie at elementum. Blandit turpis
+                cursus in hac habitasse platea dictumst quisque. Nunc lobortis mattis aliquam faucibus purus in. At
+                consectetur lorem donec massa sapien faucibus. Morbi tristique senectus et netus et malesuada. Non nisi
+                est sit amet facilisis magna etiam. Egestas tellus rutrum tellus pellentesque eu tincidunt tortor.
+                Pellentesque nec nam aliquam sem et tortor. Urna nunc id cursus metus aliquam eleifend mi in nulla. Non
+                enim praesent elementum facilisis leo vel.
+
+                Adipiscing at in tellus integer feugiat scelerisque varius morbi. Pretium vulputate sapien nec sagittis
+                aliquam malesuada. Donec pretium vulputate sapien nec sagittis aliquam malesuada. Quam viverra orci
+                sagittis eu volutpat. Dignissim sodales ut eu sem integer vitae justo eget. Gravida in fermentum et
+                sollicitudin ac orci phasellus. Lectus mauris ultrices eros in cursus. Nulla at volutpat diam ut
+                venenatis tellus. Duis ultricies lacus sed turpis tincidunt id aliquet risus. Ut sem nulla pharetra diam
+                sit amet nisl suscipit. Odio tempor orci dapibus ultrices in iaculis nunc sed augue. Non curabitur
+                gravida arcu ac tortor dignissim convallis. Risus viverra adipiscing at in. Justo donec enim diam
+                vulputate.
+
+                Id donec ultrices tincidunt arcu non sodales neque sodales. Leo a diam sollicitudin tempor id. Mauris
+                pharetra et ultrices neque ornare aenean euismod. Eget gravida cum sociis natoque penatibus. Et ultrices
+                neque ornare aenean euismod elementum nisi quis eleifend. Aliquet bibendum enim facilisis gravida neque
+                convallis a cras semper. Ullamcorper eget nulla facilisi etiam dignissim diam quis. Ultricies leo
+                integer malesuada nunc. Morbi tristique senectus et netus. Egestas integer eget aliquet nibh. Iaculis
+                nunc sed augue lacus viverra vitae. Quam pellentesque nec nam aliquam sem et tortor. Praesent tristique
+                magna sit amet purus gravida quis blandit turpis.</p>
         </section>
         <section id="contact" class="content">
-            <h2>Contact Us</h2>
-            <p>Phone: 123-456-7890</p>
-            <p>Email: info@bakery.com</p>
-            <p>Address: 123 Bakery St, City, Country</p>
+            <h2>To order:</h2>
+            <p>Email: <a href="mailto:flowerflourbakery@gmail.com">flowerflourbakery@gmail.com</a></p>
+            <p>Instagram: <a href="https://www.instagram.com/negarbakes/">Negar bakes</a></p>
+            <p>Address: Downtown Vancouver</p>
         </section>
         <footer class="content">
             <p>&copy; 2024 Flower Flour Bakery. All rights reserved.</p>
@@ -402,6 +550,10 @@
                 currentImage.style.opacity = "1"; // Show the next image
             }, 2000); // Change image every 2 seconds
         });
+
+        function closeGallery() {
+            document.getElementById('galleryContainer').style.display = 'none'; // Hide the gallery
+        }
         const galleries = document.querySelectorAll('.image-ul'); // Get all image galleries
         galleries.forEach(gallery => {
             const images = gallery.querySelectorAll('img'); // Get images in each gallery
@@ -417,9 +569,7 @@
                 document.getElementById('galleryContainer').style.display = 'flex'; // Display the gallery
             }
 
-            function closeGallery() {
-                document.getElementById('galleryContainer').style.display = 'none'; // Hide the gallery
-            }
+
 
             function showImage(index, galleryImages) {
                 const galleryImage = document.getElementById('galleryImage');
@@ -497,9 +647,10 @@
 
             let sznClick = false;
             let yrClick = false;
+            let specialClick = false;
 
             // Show seasonal baked goods section when clicked
-            document.getElementById('seasonal-baked-goods').addEventListener('click', function () {
+            document.getElementById('cakes').addEventListener('click', function () {
                 if (!sznClick) {
                     document.getElementById('custom-cakes').classList.add('menu-content-visible');
                     sznClick = true;
@@ -507,20 +658,36 @@
                     document.getElementById('custom-cakes').classList.remove('menu-content-visible');
                     sznClick = false;
                 }
-                document.getElementById('year-round-section').classList.remove('menu-content-visible');
+                document.getElementById('seasonal-section').classList.remove('menu-content-visible');
+                document.getElementById('specialities-section').classList.remove('menu-content-visible');
             });
 
             // Show year-round baked goods section when clicked
-            document.getElementById('year-round-baked-goods').addEventListener('click', function () {
+            document.getElementById('seasonal-goods').addEventListener('click', function () {
 
                 if (!yrClick) {
-                    document.getElementById('year-round-section').classList.add('menu-content-visible');
+                    document.getElementById('seasonal-section').classList.add('menu-content-visible');
                     yrClick = true;
                 } else {
-                    document.getElementById('year-round-section').classList.remove('menu-content-visible');
+                    document.getElementById('seasonal-section').classList.remove('menu-content-visible');
                     yrClick = false;
                 }
                 document.getElementById('custom-cakes').classList.remove('menu-content-visible');
+                document.getElementById('specialities-section').classList.remove('menu-content-visible');
+            });
+
+
+            document.getElementById('specialities').addEventListener('click', function () {
+                if (!specialClick) {
+                    document.getElementById('specialities-section').classList.add('menu-content-visible');
+                    specialClick = true;
+                } else {
+                    document.getElementById('specialities-section').classList.remove('menu-content-visible');
+                    specialClick = false;
+                }
+                document.getElementById('seasonal-section').classList.remove('menu-content-visible');
+                document.getElementById('custom-cakes').classList.remove('menu-content-visible');
+
             });
 
             // Previous code...
