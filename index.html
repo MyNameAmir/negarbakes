@@ -341,10 +341,94 @@
             height: 100vh;
         }
 
-        #contactp{
+        #contactp {
             display: grid;
             justify-items: start;
         }
+
+
+        fieldset {
+  border: medium none !important;
+  margin: 0 0 10px;
+  min-width: 100%;
+  padding: 0;
+  width: 100%;
+}
+
+#contact input[type="text"],
+#contact input[type="email"],
+#contact input[type="tel"],
+#contact input[type="url"],
+#contact textarea {
+    width: 98%;
+    border: 1px solid #ccc;
+    background: #FFF;
+    margin: 0 0 5px;
+    padding: 10px;
+    padding-right: 0;
+    padding-left: 2%;
+}
+
+#contact input[type="text"]:hover,
+#contact input[type="email"]:hover,
+#contact input[type="tel"]:hover,
+#contact input[type="url"]:hover,
+#contact textarea:hover {
+  -webkit-transition: border-color 0.3s ease-in-out;
+  -moz-transition: border-color 0.3s ease-in-out;
+  transition: border-color 0.3s ease-in-out;
+  border: 1px solid #aaa;
+}
+
+#contact textarea {
+  height: 100px;
+  max-width: 100%;
+  resize: none;
+}
+
+#contact button[type="submit"] {
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  background: #4CAF50;
+  color: #FFF;
+  margin: 0 0 5px;
+  padding: 10px;
+  font-size: 15px;
+}
+
+#contact button[type="submit"]:hover {
+  background: #43A047;
+  -webkit-transition: background 0.3s ease-in-out;
+  -moz-transition: background 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#contact button[type="submit"]:active {
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+#contact input:focus,
+#contact textarea:focus {
+  outline: 0;
+  border: 1px solid #aaa;
+}
+
+::-webkit-input-placeholder {
+  color: #888;
+}
+
+:-moz-placeholder {
+  color: #888;
+}
+
+::-moz-placeholder {
+  color: #888;
+}
+
+:-ms-input-placeholder {
+  color: #888;
+}
     </style>
 </head>
 
@@ -373,7 +457,7 @@
             <ul>
                 <li><a href="#about">About Us</a></li>
                 <li><a href="#bakedGoods">Baked Goods</a></li>
-                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="#contactus">Contact Us</a></li>
             </ul>
         </nav>
 
@@ -475,7 +559,9 @@
         </div>
         <section id="about" class="content">
             <h1 style="text-align: center;">About Us</h1>
-            <p id="about"><span style="font-size: xxx-large; color: rgb(93, 93, 145); scale: 1.5;"><b><i>We</i></b></span>  at <b><i>Flower Flour Bakery</i></b>, pride ourselves in creating some of the best tasting
+            <p id="about"><span
+                    style="font-size: xxx-large; color: rgb(93, 93, 145); scale: 1.5;"><b><i>We</i></b></span> at
+                <b><i>Flower Flour Bakery</i></b>, pride ourselves in creating some of the best tasting
                 baking goods.
                 Wether by ordering a cake for a special occasion, sweets to go with your tea, variety of breads or any
                 other baking needs,
@@ -484,7 +570,7 @@
                 and tell us your next baking ideas and needs that you wish to come true! <br>
             </p>
         </section>
-        <section id="contact" class="content">
+        <section id="contactus" class="content">
             <h2>To order:</h2>
             <div id="contactp">
                 <p>Email: <a href="mailto:flowerflourbakery@gmail.com"><b>flowerflourbakery@gmail.com</b></a></p>
@@ -492,6 +578,21 @@
                 <p>Address: Downtown Vancouver</p>
             </div>
         </section>
+
+        <form id="contact" action="https://formsubmit.co/flowerflourbakery@gmail.com" method="POST">
+            <fieldset>
+                <input placeholder="Your name" type="text" tabindex="1" required autofocus>
+            </fieldset>
+            <fieldset>
+                <input placeholder="Your Email Address" type="email" tabindex="2" required>
+            </fieldset>
+            <fieldset>
+                <textarea placeholder="Type your message here...." tabindex="5" required></textarea>
+            </fieldset>
+            <fieldset>
+                <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+            </fieldset>
+        </form>
         <footer class="content">
             <p>&copy; 2024 Flower Flour Bakery. All rights reserved.</p>
         </footer>
