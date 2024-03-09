@@ -177,27 +177,7 @@
             font-family: 'Roboto', sans-serif;
         }
 
-        /* Add hover effect for sections */
-        nav:hover,
-        footer:hover,
-        header:hover,
-        .content-wrapper section:hover {
-            transform: scale(1.05);
-            /* Scale section size by 5% */
-            transition: transform 0.3s ease;
-            /* Add transition effect for scale */
-        }
-
-        /* Add active effect for sections */
-        nav:active,
-        footer:active,
-        header:active,
-        .content-wrapper section:active {
-            transform: scale(1.05);
-            /* Scale section size by 5% */
-            transition: transform 0.3s ease;
-            /* Add transition effect for scale */
-        }
+        
 
         .bakery-name {
             position: absolute;
@@ -433,6 +413,20 @@
                 </li>
             </ul>
         </section>
+        <section id="specialities-section" class="menu-content content">
+            <ul class="image-ul">
+                <li>
+                    <img class="menu-image" src="specialities/1.jpg" alt="Seasonal Item 1">
+                </li>
+                <!-- Add onclick event to open the gallery -->
+                <li>
+                    <img class="menu-image" src="specialities/2.jpg" alt="Seasonal Item 2">
+                </li>
+                <li>
+                    <img class="menu-image" src="specialities/3.jpg" alt="Seasonal Item 3">
+                </li>
+            </ul>
+        </section>
         <section id="seasonal-section" class="menu-content content">
             <ul class="image-ul">
                 <li>
@@ -450,20 +444,7 @@
                 </li>
             </ul>
         </section>
-        <section id="specialities-section" class="menu-content content">
-            <ul class="image-ul">
-                <li>
-                    <img class="menu-image" src="specialities/1.jpg" alt="Seasonal Item 1">
-                </li>
-                <!-- Add onclick event to open the gallery -->
-                <li>
-                    <img class="menu-image" src="specialities/2.jpg" Seasonal Item 2">
-                </li>
-                <li>
-                    <img class="menu-image" src="specialities/3.jpg" alt="Seasonal Item 3">
-                </li>
-            </ul>
-        </section>
+        
         <!-- Gallery container -->
         <div class="gallery-container" id="galleryContainer">
             <div class="gallery-content">
@@ -474,47 +455,11 @@
             </div>
         </div>
         <section id="about" class="content">
-            <h2>About Us</h2>
-            <p id="about">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                labore et
-                dolore magna aliqua. Vel orci porta non pulvinar neque laoreet. Egestas integer eget aliquet nibh
-                praesent. Enim facilisis gravida neque convallis a. Donec pretium vulputate sapien nec sagittis.
-                Scelerisque viverra mauris in aliquam. Ut tristique et egestas quis ipsum suspendisse ultrices gravida.
-                Nunc mi ipsum faucibus vitae aliquet. Suspendisse sed nisi lacus sed viverra tellus. Praesent semper
-                feugiat nibh sed pulvinar proin gravida hendrerit lectus. Turpis egestas maecenas pharetra convallis
-                posuere morbi leo.
-
-                Vitae sapien pellentesque habitant morbi tristique senectus et netus. Ac tincidunt vitae semper quis
-                lectus nulla at. Arcu odio ut sem nulla pharetra. Luctus accumsan tortor posuere ac ut consequat semper.
-                Sodales ut eu sem integer vitae justo eget magna. Tellus in metus vulputate eu scelerisque felis
-                imperdiet proin. Eget lorem dolor sed viverra ipsum nunc aliquet. Pulvinar elementum integer enim neque
-                volutpat ac tincidunt vitae. Tristique senectus et netus et malesuada fames. Odio morbi quis commodo
-                odio aenean sed adipiscing.
-
-                Scelerisque eleifend donec pretium vulputate sapien nec. Ac felis donec et odio pellentesque diam
-                volutpat commodo. Massa eget egestas purus viverra. Morbi leo urna molestie at elementum. Blandit turpis
-                cursus in hac habitasse platea dictumst quisque. Nunc lobortis mattis aliquam faucibus purus in. At
-                consectetur lorem donec massa sapien faucibus. Morbi tristique senectus et netus et malesuada. Non nisi
-                est sit amet facilisis magna etiam. Egestas tellus rutrum tellus pellentesque eu tincidunt tortor.
-                Pellentesque nec nam aliquam sem et tortor. Urna nunc id cursus metus aliquam eleifend mi in nulla. Non
-                enim praesent elementum facilisis leo vel.
-
-                Adipiscing at in tellus integer feugiat scelerisque varius morbi. Pretium vulputate sapien nec sagittis
-                aliquam malesuada. Donec pretium vulputate sapien nec sagittis aliquam malesuada. Quam viverra orci
-                sagittis eu volutpat. Dignissim sodales ut eu sem integer vitae justo eget. Gravida in fermentum et
-                sollicitudin ac orci phasellus. Lectus mauris ultrices eros in cursus. Nulla at volutpat diam ut
-                venenatis tellus. Duis ultricies lacus sed turpis tincidunt id aliquet risus. Ut sem nulla pharetra diam
-                sit amet nisl suscipit. Odio tempor orci dapibus ultrices in iaculis nunc sed augue. Non curabitur
-                gravida arcu ac tortor dignissim convallis. Risus viverra adipiscing at in. Justo donec enim diam
-                vulputate.
-
-                Id donec ultrices tincidunt arcu non sodales neque sodales. Leo a diam sollicitudin tempor id. Mauris
-                pharetra et ultrices neque ornare aenean euismod. Eget gravida cum sociis natoque penatibus. Et ultrices
-                neque ornare aenean euismod elementum nisi quis eleifend. Aliquet bibendum enim facilisis gravida neque
-                convallis a cras semper. Ullamcorper eget nulla facilisi etiam dignissim diam quis. Ultricies leo
-                integer malesuada nunc. Morbi tristique senectus et netus. Egestas integer eget aliquet nibh. Iaculis
-                nunc sed augue lacus viverra vitae. Quam pellentesque nec nam aliquam sem et tortor. Praesent tristique
-                magna sit amet purus gravida quis blandit turpis.</p>
+            <h1 style="text-align: center;">About Us</h1>
+            <p id="about">My Name is Negar and I love to bake and create delicious edible delicacies of all kinds. If there is anything 
+                on your mind that is involves baking send me a message on my Instagram DM's or an email, and I will get back to you with a 
+                quote and details. 
+            </p>
         </section>
         <section id="contact" class="content">
             <h2>To order:</h2>
@@ -554,7 +499,8 @@
         function closeGallery() {
             document.getElementById('galleryContainer').style.display = 'none'; // Hide the gallery
         }
-        const galleries = document.querySelectorAll('.image-ul'); // Get all image galleries
+        let galleries = document.querySelectorAll('.image-ul'); // Get all image galleries
+        console.log(galleries)
         galleries.forEach(gallery => {
             const images = gallery.querySelectorAll('img'); // Get images in each gallery
             let currentIndex = 0; // Initialize current index for each gallery
