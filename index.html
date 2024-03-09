@@ -214,6 +214,7 @@
         .menu-image {
             width: 75vw;
             height: 75vw;
+            border-radius: 10px;
         }
 
         .image-ul {
@@ -391,7 +392,7 @@
             cursor: pointer;
             width: 100%;
             border: none;
-            background: #4CAF50;
+            background: rgb(93, 93, 145);
             color: #FFF;
             margin: 0 0 5px;
             padding: 10px;
@@ -399,7 +400,7 @@
         }
 
         #contact button[type="submit"]:hover {
-            background: #43A047;
+            background: rgb(65, 65, 107);
             -webkit-transition: background 0.3s ease-in-out;
             -moz-transition: background 0.3s ease-in-out;
             transition: background-color 0.3s ease-in-out;
@@ -587,8 +588,7 @@
             <p style="margin-bottom: 25px; text-align: justify;">You can also submit the following form with your questions: </p>
             <form id="contact" action="https://formsubmit.co/flowerflourbakery@gmail.com" method="POST">
                 <fieldset>
-                    <input type="text" name="name" placeholder="Enter your name here...." tabindex="1" required
-                        autofocus>
+                    <input type="text" name="name" placeholder="Enter your name here...." tabindex="1" required>
                 </fieldset>
                 <fieldset>
                     <input type="email" name="email" placeholder="Enter your email here...." tabindex="2" required>
